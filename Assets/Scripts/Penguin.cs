@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -56,7 +57,14 @@ public class Penguin : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        _rigidbody2D.position=_startPosition;
+        StartCoroutine(ResetAfterDelay());
+        
+    }
+
+    private IEnumerator ResetAfterDelay()
+    {
+        yield return new WaitForSeconds(3);
+        _rigidbody2D.position = _startPosition;
         _rigidbody2D.isKinematic = true;
         _rigidbody2D.velocity = Vector2.zero;
     }
