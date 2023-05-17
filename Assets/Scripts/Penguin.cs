@@ -23,6 +23,12 @@ public class Penguin : MonoBehaviour
         GetComponent<SpriteRenderer>().color = new Color(255, 255, 255);
     }
 
+    void OnMouseDrag()
+    {
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
+    }
+
     // Update is called once per frame
     void Update()
     {
