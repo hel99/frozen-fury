@@ -303,6 +303,7 @@ GameObject:
   - component: {fileID: 1549485449}
   - component: {fileID: 1549485451}
   - component: {fileID: 1549485452}
+  - component: {fileID: 1549485453}
   m_Layer: 0
   m_Name: borbeni pingvin
   m_TagString: Untagged
@@ -766,6 +767,18 @@ PolygonCollider2D:
       - {x: -0.82417125, y: -15.44558}
       - {x: -0.33577347, y: -15.415055}
       - {x: 0.030524861, y: -15.38453}
+--- !u!114 &1549485453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549485447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad948a7bd73e52340a5d14b27b69f621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1917934127
 GameObject:
   m_ObjectHideFlags: 0
