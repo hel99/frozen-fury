@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class EnemySeal : MonoBehaviour
 {
+    bool _hasDied;
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(ShouldDieFromCollision(collision))
@@ -13,8 +15,11 @@ public class EnemySeal : MonoBehaviour
         }      
     }
 
-    private bool ShouldDieFromCollision(Collision2D collision)
+    bool ShouldDieFromCollision(Collision2D collision)
     {
+        if (_hasDied)
+            return false;
+
         Penguin penguin = collision.gameObject.GetComponent<Penguin>();
         if (penguin != null)
             return true;
@@ -27,6 +32,8 @@ public class EnemySeal : MonoBehaviour
 
     void Die()
     {
+
+        _hasDied = true;
         gameObject.SetActive(false);
     }
 }
