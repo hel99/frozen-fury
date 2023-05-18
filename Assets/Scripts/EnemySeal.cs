@@ -12,7 +12,7 @@ public class EnemySeal : MonoBehaviour
     {
         if(ShouldDieFromCollision(collision))
         {
-            Die();
+            StartCoroutine(Die());
         }      
     }
 
@@ -31,10 +31,11 @@ public class EnemySeal : MonoBehaviour
         return false;
     }
 
-    void Die()
+    IEnumerator Die()
     {
 
         _hasDied = true;
+        yield return new WaitForSeconds(1);
         gameObject.SetActive(false);
     }
 }
