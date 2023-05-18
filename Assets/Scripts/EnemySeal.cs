@@ -19,6 +19,9 @@ public class EnemySeal : MonoBehaviour
         if (penguin != null)
             return true;
 
+        if (collision.contacts[0].normal.y < -0.5)
+            return true;
+
         return false;
     }
 
